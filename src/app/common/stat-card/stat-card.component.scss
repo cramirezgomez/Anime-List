@@ -1,0 +1,24 @@
+:host {
+  margin: 20px;
+  width: 80%;
+  // min-width: 400px;
+  max-width: 300px;
+  max-height: 176px;
+}
+
+
+.stat-box {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
+// .mat-card{
+//   background-color: #323232;
+// }
+mat-card-actions {
+  display: flex;
+  justify-content: right;
+}
+
+

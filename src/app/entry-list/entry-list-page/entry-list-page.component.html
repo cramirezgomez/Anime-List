@@ -1,0 +1,8 @@
+
+
+<!-- <app-stat-card *ngIf="entryList && total" [entry]='total' [isTotal]='true' [count]="entryList.length">
+</app-stat-card> -->
+
+<app-stat-card *ngFor='let entry of entryList' [entry]='entry'>
+  <button mat-raised-button color="warn"  (click)="deleteEntry(entry)">Delete</button>
+</app-stat-card>

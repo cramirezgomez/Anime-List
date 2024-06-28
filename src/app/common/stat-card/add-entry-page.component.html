@@ -1,0 +1,31 @@
+
+<form class="background-elem" [formGroup]="newEntryForm" autocomplete="off" (ngSubmit)="saveEntry(newEntryForm.value) ">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Add Stats</mat-card-title>
+    </mat-card-header> 
+    
+    <mat-card-content>
+      <mat-form-field color="accent">
+        <mat-label>Chars</mat-label>
+        <input type="number" matInput formControlName="chars">
+      </mat-form-field>
+      <mat-form-field color="accent">
+        <mat-label>Lines</mat-label>
+        <input type="number" matInput formControlName="lines">
+      </mat-form-field>
+      <mat-form-field color="accent">
+        <mat-label>Mins</mat-label>
+        <input type="number" matInput formControlName="mins">
+      </mat-form-field>
+      <mat-form-field color="accent">
+        <mat-label>Date</mat-label>
+        <input type="date" matInput formControlName="date">
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color='primary' type="submit">Submit</button>
+      <button mat-raised-button color="warn" type="reset" (click)="clearForm(newEntryForm.value)">Clear</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

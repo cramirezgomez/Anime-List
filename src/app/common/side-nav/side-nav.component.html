@@ -1,0 +1,15 @@
+<mat-sidenav-container class="app-sidenav-container">
+  <mat-sidenav class="app-sidenav mat-elevation-z10" mode="side" opened > 
+    <mat-toolbar color="primary">
+      Totals
+    </mat-toolbar>
+    <!-- <app-stat-card *ngIf="total" [entry]='total' [isTotal]='true' [count]="count">
+    </app-stat-card> -->
+  </mat-sidenav>
+  <mat-sidenav-content class="app-content">
+    <app-nav-bar></app-nav-bar>
+    <div class="wrapper">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
