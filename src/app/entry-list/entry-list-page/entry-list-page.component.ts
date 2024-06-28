@@ -1,12 +1,15 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { EntryService } from 'src/app/common/entry.service';
-import { IEntry } from 'src/app/common/i-entry';
+import { EntryService } from '../../common/entry.service';
+import { IEntry } from '../../common/i-entry';
+import { StatCardComponent } from '../../common/stat-card/stat-card.component';
 
 @Component({
+  standalone: true,
   selector: 'app-home-page',
   templateUrl: './entry-list-page.component.html',
-  styleUrls: ['./entry-list-page.component.scss']
+  styleUrls: ['./entry-list-page.component.scss'],
+  imports: [StatCardComponent]
 })
 export class EntryListPageComponent implements OnInit {
   entryList: IEntry[] = [];

@@ -1,14 +1,18 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { Form, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { EntryService } from 'src/app/common/entry.service';
-import { IEntry } from 'src/app/common/i-entry';
+import { EntryService } from '../../common/entry.service';
+import { IEntry } from '../../common/i-entry';
+import { MatCardModule } from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
+  standalone: true,
   selector: 'app-add-entry-page',
   templateUrl: './add-entry-page.component.html',
-  styleUrls: ['./add-entry-page.component.scss']
+  styleUrls: ['./add-entry-page.component.scss'],
+  imports: [MatCardModule, MatFormFieldModule, ReactiveFormsModule]
 })
 export class AddEntryPageComponent implements OnInit {
   newEntryForm!: FormGroup;

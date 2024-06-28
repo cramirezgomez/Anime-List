@@ -17,7 +17,7 @@ export class EntryService {
   }
 
   getEntries(): Observable<IEntry[]>{
-    return of()
+    return of(test_data['api-entries'])
     return this._http.get<IEntry[]>(this.url)
     .pipe(catchError(this.handleError<IEntry[]>('getEntries', []), ))
   }
@@ -54,4 +54,65 @@ export class EntryService {
       return of(result as T)
     }
   }
+}
+
+const test_data = {
+  "api-entries": [
+    {
+      "chars": 10000,
+      "lines": 400,
+      "date": "2021-10-02",
+      "mins": 60,
+      "id": 1
+    },
+    {
+      "chars": 18359,
+      "lines": 691,
+      "date": "2021-10-03",
+      "mins": 128,
+      "id": 3
+    },
+    {
+      "chars": 1,
+      "lines": 1,
+      "date": "2021-10-05",
+      "mins": 1,
+      "id": 4
+    },
+    {
+      "chars": 1,
+      "lines": 11,
+      "date": "2021-10-06",
+      "mins": 1,
+      "id": 5
+    },
+    {
+      "chars": 1,
+      "lines": 1,
+      "date": "2021-10-15",
+      "mins": 1,
+      "id": 7
+    },
+    {
+      "chars": 1,
+      "lines": 1,
+      "date": "2021-10-15",
+      "mins": 1,
+      "id": 8
+    },
+    {
+      "chars": 2,
+      "lines": 3,
+      "date": "2021-10-15",
+      "mins": 3,
+      "id": 9
+    },
+    {
+      "chars": 100000000000000,
+      "lines": 100000000000000,
+      "date": "2021-11-23",
+      "mins": 100000000000000,
+      "id": 10
+    }
+  ]
 }
