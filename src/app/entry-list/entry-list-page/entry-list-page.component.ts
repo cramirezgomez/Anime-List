@@ -3,13 +3,15 @@ import { ActivatedRoute } from '@angular/router';
 import { EntryService } from '../../common/entry.service';
 import { IEntry } from '../../common/i-entry';
 import { StatCardComponent } from '../../common/stat-card/stat-card.component';
+import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   standalone: true,
   selector: 'app-home-page',
   templateUrl: './entry-list-page.component.html',
   styleUrls: ['./entry-list-page.component.scss'],
-  imports: [StatCardComponent]
+  imports: [StatCardComponent, CommonModule, MatButtonModule]
 })
 export class EntryListPageComponent implements OnInit {
   entryList: IEntry[] = [];
@@ -21,7 +23,6 @@ export class EntryListPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.entryList = this.route.snapshot.data['entries'];
-    this.entryList.sort(sortByDate)
   }
   ngAfterViewInit(){
   }
@@ -38,13 +39,4 @@ export class EntryListPageComponent implements OnInit {
     }
   }
 
-}
-function sortByDate(a: IEntry, b:IEntry){
-  if(a.date > b.date){
-    return 1
-  }
-  else if( a.date === b.date){
-    return 0
-  }
-  return -1;
 }

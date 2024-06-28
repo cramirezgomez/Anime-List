@@ -16,7 +16,6 @@ export class StatCardComponent implements OnInit {
     chars: 0,
     lines: 0,
     mins: 0,
-    date: ''
   }
   @Input() isTotal = false;
   @Input() count = 0;

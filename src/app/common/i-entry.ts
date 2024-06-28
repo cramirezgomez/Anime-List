@@ -3,5 +3,4 @@ export interface IEntry {
   chars: number,
   lines: number,
   mins: number,
-  date: string
 }

@@ -23,7 +23,6 @@ export class SideNavComponent implements OnInit {
     chars: 0,
     lines: 0,
     mins: 0,
-    date: ''
   };
   count:number = 0;
   constructor(private entrySer: EntryService, private route: ActivatedRoute) { 
@@ -58,7 +57,6 @@ export class SideNavComponent implements OnInit {
       chars: 0,
       lines: 0,
       mins: 0,
-      date: ''
     }
     entryList.reduce((prev, cur) => {
         prev.chars += cur.chars;

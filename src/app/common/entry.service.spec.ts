@@ -38,14 +38,12 @@ describe('EntryService', () => {
         chars: 10,
         lines: 11,
         mins: 12,
-        date: 'Unknown'
       },
       sample2:IEntry = {
         id: 2,
         chars: 20,
         lines: 21,
         mins: 22,
-        date: 'Unknown'
       }
       let entryDB: IEntry[] = [
         sample1,
@@ -76,7 +74,6 @@ describe('EntryService', () => {
         chars: 10,
         lines: 11,
         mins: 12,
-        date: 'Unknown'
       }
 
       //Act
@@ -96,14 +93,12 @@ describe('EntryService', () => {
         chars: 10,
         lines: 11,
         mins: 12,
-        date: 'Unknown'
       },
       sample2:IEntry = {
         id: 2,
         chars: 20,
         lines: 21,
         mins: 22,
-        date: 'Unknown'
       }
       let entryList: IEntry[] = [
         sample1,
@@ -126,14 +121,12 @@ describe('EntryService', () => {
         chars: 10,
         lines: 11,
         mins: 12,
-        date: 'Unknown'
       },
       sample2:IEntry = {
         id: 2,
         chars: 20,
         lines: 21,
         mins: 22,
-        date: 'Unknown'
       }
       let entryList: IEntry[] = [
         sample1,
