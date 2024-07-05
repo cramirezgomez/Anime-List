@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EntryService } from '../../common/entry.service';
-import { IEntry } from '../../common/i-entry';
+import { Entry } from '../../common/entry';
 import { StatCardComponent } from '../../common/stat-card/stat-card.component';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
@@ -14,9 +14,9 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [StatCardComponent, CommonModule, MatButtonModule]
 })
 export class EntryListPageComponent implements OnInit {
-  entryList: IEntry[] = [];
+  entryList: Entry[] = [];
 
-  @Output() totalEvent = new EventEmitter<IEntry>();
+  @Output() totalEvent = new EventEmitter<Entry>();
 
 
   constructor(private entrySer: EntryService, private route: ActivatedRoute) { }
@@ -27,7 +27,7 @@ export class EntryListPageComponent implements OnInit {
   ngAfterViewInit(){
   }
 
-  deleteEntry(entry:IEntry){
+  deleteEntry(entry:Entry){
     if(confirm("Entry will be deleted!")){
       this.entrySer.deleteEntry(entry.id ,this.entryList).subscribe()
     }

@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 
 import { EntryService } from './entry.service';
-import { IEntry } from './i-entry';
+import { Entry } from './entry';
 
 describe('EntryService', () => {
   let entrySer: EntryService;
@@ -17,8 +17,8 @@ describe('EntryService', () => {
     
     it('should return 0 items', () => {
       //Arrange
-      let entryList:IEntry[] = []
-      let entryDB: IEntry[] = []
+      let entryList:Entry[] = []
+      let entryDB: Entry[] = []
       mockHttp.get.and.returnValue(of(entryDB))
 
       //Act
@@ -32,20 +32,20 @@ describe('EntryService', () => {
 
     it('should return 2 items', () => {
       //Arrange
-      let entryList:IEntry[] = []
-      let sample1:IEntry = {
+      let entryList:Entry[] = []
+      let sample1:Entry = {
         id: 1,
         chars: 10,
         lines: 11,
         mins: 12,
       },
-      sample2:IEntry = {
+      sample2:Entry = {
         id: 2,
         chars: 20,
         lines: 21,
         mins: 22,
       }
-      let entryDB: IEntry[] = [
+      let entryDB: Entry[] = [
         sample1,
         sample2
       ]
@@ -67,9 +67,9 @@ describe('EntryService', () => {
   describe('saveEntry', () => {
     it('should call post with the right url', () => {
       //Arrange
-      let entryList:IEntry[] = []
+      let entryList:Entry[] = []
       mockHttp.post.and.returnValue(of(true))
-      let sample:IEntry = {
+      let sample:Entry = {
         id: 1,
         chars: 10,
         lines: 11,
@@ -88,19 +88,19 @@ describe('EntryService', () => {
   describe('deleteEntry', () => {
     it('should delete the first item', () => {
       //Arrange
-      let sample1:IEntry = {
+      let sample1:Entry = {
         id: 1,
         chars: 10,
         lines: 11,
         mins: 12,
       },
-      sample2:IEntry = {
+      sample2:Entry = {
         id: 2,
         chars: 20,
         lines: 21,
         mins: 22,
       }
-      let entryList: IEntry[] = [
+      let entryList: Entry[] = [
         sample1,
         sample2
       ]
@@ -116,19 +116,19 @@ describe('EntryService', () => {
 
     it('should call delete with the right url', () => {
       //Arrange
-      let sample1:IEntry = {
+      let sample1:Entry = {
         id: 1,
         chars: 10,
         lines: 11,
         mins: 12,
       },
-      sample2:IEntry = {
+      sample2:Entry = {
         id: 2,
         chars: 20,
         lines: 21,
         mins: 22,
       }
-      let entryList: IEntry[] = [
+      let entryList: Entry[] = [
         sample1,
         sample2
       ]

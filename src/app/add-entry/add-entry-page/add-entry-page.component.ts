@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EntryService } from '../../common/entry.service';
-import { IEntry } from '../../common/i-entry';
+import { Entry } from '../../common/entry';
 import { MatCardModule } from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -34,7 +34,7 @@ export class AddEntryPageComponent implements OnInit {
     
   }
   saveEntry(formData: any){
-    let entry: IEntry = {
+    let entry: Entry = {
       englishName: formData.englishName,
       japaneseName: formData.japaneseName,
       date: Date.now().toString(),

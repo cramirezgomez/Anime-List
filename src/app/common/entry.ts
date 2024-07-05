@@ -1,4 +1,4 @@
-export interface IEntry {
+export interface Entry {
   id: number
   englishName: string,
   japaneseName: string,

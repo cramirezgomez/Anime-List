@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IEntry } from '../i-entry';
+import { Entry } from '../entry';
 import {MatCardModule} from '@angular/material/card';
 import { CommonModule, NgClass } from '@angular/common';
 
@@ -11,7 +11,7 @@ import { CommonModule, NgClass } from '@angular/common';
   imports: [MatCardModule, CommonModule]
 })
 export class StatCardComponent implements OnInit {
-  @Input() entry:IEntry = {
+  @Input() entry:Entry = {
     id: 0,
     englishName: '',
     japaneseName: '',

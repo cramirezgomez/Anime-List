@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { EntryService } from '../entry.service';
-import { IEntry } from '../i-entry';
+import { Entry } from '../entry';
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NavBarComponent } from '../nav-bar/nav-bar.component';
@@ -17,7 +17,7 @@ import { NavBarComponent } from '../nav-bar/nav-bar.component';
 })
 export class SideNavComponent implements OnInit {
   totalChangeSub!:Subscription;
-  entryList: IEntry[]= [];
+  entryList: Entry[]= [];
   totalCount:number = 0;
   count:number = 0;
   constructor(private entrySer: EntryService, private route: ActivatedRoute) { 

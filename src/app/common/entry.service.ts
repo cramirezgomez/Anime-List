@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { IEntry } from './i-entry';
+import { Entry } from './entry';
 
 @Injectable({
   providedIn: 'root',
@@ -16,20 +16,20 @@ export class EntryService {
 
   }
 
-  getEntries(): Observable<IEntry[]>{
+  getEntries(): Observable<Entry[]>{
     return of(test_data['api-entries'])
-    return this._http.get<IEntry[]>(this.url)
-    .pipe(catchError(this.handleError<IEntry[]>('getEntries', []), ))
+    return this._http.get<Entry[]>(this.url)
+    .pipe(catchError(this.handleError<Entry[]>('getEntries', []), ))
   }
 
-  saveEntry(entry: IEntry){
+  saveEntry(entry: Entry){
     return of()
     let options = {headers: new HttpHeaders({'Content-Type': 'application/json'})}
     return this._http.post(this.url, entry, options )
-    .pipe(catchError(this.handleError<IEntry>('saveEntry'), ))
+    .pipe(catchError(this.handleError<Entry>('saveEntry'), ))
   }
   
-  deleteEntry(id: number, entries: IEntry[]){
+  deleteEntry(id: number, entries: Entry[]){
     return of()
     //delete from array
     let index = entries.map( x => x.id).indexOf(id);
