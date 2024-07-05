@@ -18,29 +18,26 @@ import { MatButtonModule } from '@angular/material/button';
 export class AddEntryPageComponent implements OnInit {
   newEntryForm!: FormGroup;
 
-  chars!: FormControl;
-  lines!: FormControl;
-  mins!: FormControl;
+  englishName!: FormControl;
+  japaneseName!: FormControl;
 
   constructor(private entrySer: EntryService, private router: Router) { }
 
   ngOnInit(): void {
-    this.chars = new FormControl('', Validators.required)
-    this.lines = new FormControl('', Validators.required)
-    this.mins = new FormControl('', Validators.required)
+    this.englishName = new FormControl<string>('', Validators.required)
+    this.japaneseName = new FormControl<string>('', Validators.required)
 
     this.newEntryForm = new FormGroup({
-      chars: this.chars,
-      lines:this.lines,
-      mins: this.mins,
+      englishName: this.englishName,
+      japaneseName:this.japaneseName,
     })
     
   }
   saveEntry(formData: any){
     let entry: IEntry = {
-      chars: +formData.chars,
-      lines: +formData.lines,
-      mins: +formData.mins,
+      englishName: formData.englishName,
+      japaneseName: formData.japaneseName,
+      date: Date.now().toString(),
       id: 0
     }
     console.log(entry)

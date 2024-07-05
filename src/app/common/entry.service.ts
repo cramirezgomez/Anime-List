@@ -59,52 +59,10 @@ export class EntryService {
 const test_data = {
   "api-entries": [
     {
-      "chars": 10000,
-      "lines": 400,
-      "mins": 60,
-      "id": 1
+      id: 1,
+      englishName: 'Anohana',
+      japaneseName: '',
+      date: '2021-01-01'
     },
-    {
-      "chars": 18359,
-      "lines": 691,
-      "mins": 128,
-      "id": 3
-    },
-    {
-      "chars": 1,
-      "lines": 1,
-      "mins": 1,
-      "id": 4
-    },
-    {
-      "chars": 1,
-      "lines": 11,
-      "mins": 1,
-      "id": 5
-    },
-    {
-      "chars": 1,
-      "lines": 1,
-      "mins": 1,
-      "id": 7
-    },
-    {
-      "chars": 1,
-      "lines": 1,
-      "mins": 1,
-      "id": 8
-    },
-    {
-      "chars": 2,
-      "lines": 3,
-      "mins": 3,
-      "id": 9
-    },
-    {
-      "chars": 100000000000000,
-      "lines": 100000000000000,
-      "mins": 100000000000000,
-      "id": 10
-    }
   ]
 }

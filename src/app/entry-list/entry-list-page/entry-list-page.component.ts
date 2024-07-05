@@ -27,15 +27,9 @@ export class EntryListPageComponent implements OnInit {
   ngAfterViewInit(){
   }
 
-  calcTotal() {
-    this.entrySer.calcTotal(true);
-  }
-
   deleteEntry(entry:IEntry){
     if(confirm("Entry will be deleted!")){
       this.entrySer.deleteEntry(entry.id ,this.entryList).subscribe()
-    
-      this.calcTotal();
     }
   }
 

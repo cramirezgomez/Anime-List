@@ -13,9 +13,9 @@ import { CommonModule, NgClass } from '@angular/common';
 export class StatCardComponent implements OnInit {
   @Input() entry:IEntry = {
     id: 0,
-    chars: 0,
-    lines: 0,
-    mins: 0,
+    englishName: '',
+    japaneseName: '',
+    date: ''
   }
   @Input() isTotal = false;
   @Input() count = 0;

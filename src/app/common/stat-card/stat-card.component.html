@@ -5,16 +5,16 @@
   
   <mat-card-content>
     <div class="stat-box">
-      <label>Chars</label>
-      <div id="char-stat">{{entry.chars | number}}</div>
+      <label>English Name</label>
+      <div id="char-stat">{{entry.englishName}}</div>
     </div>
     <div class="stat-box">
-      <label>Lines</label>
-      <div >{{entry.lines | number}}</div>
+      <label>Japanese Name</label>
+      <div >{{entry.japaneseName}}</div>
     </div>
     <div class="stat-box">
-      <label>Chars/Hour</label>
-      <div>{{entry.chars / entry.mins * 60  | number:'1.0-0'}}</div>
+      <label>Date</label>
+      <div>{{entry.date  | date}}</div>
     </div>
     <div class="stat-box" *ngIf="isTotal">
       <label>Entries</label>
